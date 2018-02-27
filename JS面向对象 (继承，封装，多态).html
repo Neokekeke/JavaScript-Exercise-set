@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS面向对象 (继承，封装，多态)</title>
+</head>
+<body>
+
+<script>
+    //封装：多个属性或方法包含在一个对象中，可以由这个对象拓展新的对象实例
+    //可以通过构造函数的prototype对象去实现
+    function Foo(name , age){
+        this.name = name;
+        this.age = age;
+        this.fn = function(){
+            console.log("你好",this.name);
+        }
+    }
+    //原型链上实例的共享方法，即相同的属性或者方法，抽离出来就可以节省内存
+    Foo.prototype.color = "red";
+
+    let foo1 = new Foo("neo",12);
+    let foo2= new Foo("cherry",10);
+    console.log(foo1.color);
+
+    //继承：原型链上的继承，新实例中没有的属性，就向上查找原型
+    //p.__proto__ == Person.prototype
+    //new 一个对象的过程：分解：
+    // 1.Person。prototype里面的属性都由新实例继承
+    // 2.构造函数内部隐式返回一个this，this指代新实例
+    function Person(gender){
+        this.gender = function(){
+            console.log(gender);
+        }
+    }
+
+    function Man(){
+        this.handsome = function(){
+            console.log("666");
+        }
+    }
+
+    Man.prototype = new Person("男");
+    let man = new Man();
+    man.gender();
+    man.handsome();
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

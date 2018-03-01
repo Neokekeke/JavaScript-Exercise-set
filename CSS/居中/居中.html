@@ -8,6 +8,9 @@
 <div id="d1"></div>
 <div id="d2"></div>
 <div id="d3"></div>
+<div id="d5">
+    <div></div>
+</div>
 <style>
     #d1 {
         position: absolute;
@@ -22,22 +25,32 @@
     }
     #d2 {
         position: absolute;
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
         top: 50%;
         left: 50%;
-        margin-left: -100px;   /* 必须预先知道宽高 */
-        margin-top: -100px;
+        margin-left: -125px;   /* 必须预先知道宽高 */
+        margin-top: -125px;
         background-color: greenyellow;	/* 方便看效果 */
     }
     #d3 {
         position: absolute;
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        height: 200px;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%); /* 低版本浏览器兼容性不好 */
         background-color: lightblue;	/* 方便看效果 */
+    }
+    #d5 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #d5 div{
+        width: 100px;
+        height: 100px;
+        background-color: gold;
     }
 </style>
 

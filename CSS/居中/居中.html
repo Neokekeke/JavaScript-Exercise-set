@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>居中</title>
+</head>
+<body>
+<div id="d1"></div>
+<div id="d2"></div>
+<div id="d3"></div>
+<style>
+    #d1 {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        margin: auto;  /* 这里是居中重点 */
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: pink;	/* 方便看效果 */
+    }
+    #d2 {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        top: 50%;
+        left: 50%;
+        margin-left: -100px;   /* 必须预先知道宽高 */
+        margin-top: -100px;
+        background-color: greenyellow;	/* 方便看效果 */
+    }
+    #d3 {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%); /* 低版本浏览器兼容性不好 */
+        background-color: lightblue;	/* 方便看效果 */
+    }
+</style>
+
+</body>
+</html>

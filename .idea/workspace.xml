@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab751bdf-81ea-408b-8ce4-c3786fad99fb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/居中/居中.html" afterPath="$PROJECT_DIR$/CSS/居中/居中.html" />
-    </list>
+    <list default="true" id="ab751bdf-81ea-408b-8ce4-c3786fad99fb" name="Default" comment="" />
     <ignored path="JavaScript-Exercise-set.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="居中.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CSS/居中/居中.html">
+      <file leaf-file-name="display和visibility.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CSS/display和visibility/display和visibility.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6784074" vertical-offset="967" max-vertical-offset="1890">
-              <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.609375" vertical-offset="0" max-vertical-offset="750">
+              <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -51,6 +49,8 @@
         <option value="$PROJECT_DIR$/CSS/盒模型/标准盒模型.html" />
         <option value="$PROJECT_DIR$/CSS/盒模型/IE怪异盒子模型.html" />
         <option value="$PROJECT_DIR$/CSS/居中/居中.html" />
+        <option value="$PROJECT_DIR$/CSS/display和visibility.html" />
+        <option value="$PROJECT_DIR$/CSS/display和visibility/display和visibility.html" />
       </list>
     </option>
   </component>
@@ -70,7 +70,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="1" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -114,7 +114,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CSS" />
+              <option name="myItemId" value="picture" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -131,10 +131,6 @@
               <option name="myItemId" value="CSS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="居中" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -146,6 +142,14 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mes\Desktop\gitRepository\JavaScript-Exercise-set\picture" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mes\Desktop\gitRepository\JavaScript-Exercise-set\CSS\display和visibility" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -263,8 +267,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CSS/居中/居中.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6784074" vertical-offset="967" max-vertical-offset="1890">
+        <state vertical-scroll-proportion="-40.696968" vertical-offset="67" max-vertical-offset="1890">
           <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/display和visibility/display和visibility.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.609375" vertical-offset="0" max-vertical-offset="750">
+          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
           <folding />
         </state>
       </provider>

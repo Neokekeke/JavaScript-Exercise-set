@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>IE怪异盒子模型</title>
+</head>
+<body>
+<div class="ie"></div>
+<style>
+    .ie{
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        border: 50px solid lightcoral;
+        padding: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        box-sizing: border-box;
+    }
+</style>
+</body>
+</html>

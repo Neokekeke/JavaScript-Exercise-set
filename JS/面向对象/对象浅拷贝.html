@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>对象浅拷贝</title>
+</head>
+<body>
+<script>
+    var province = {
+        provinceName : '广东'
+    };
+
+    var city = {
+        cityName1 : "广州",
+        cityName2 : "深圳",
+        cityName3 : "珠海"
+     };
+
+    //es6的Object.assign()浅拷贝方法，第一参数是源对象，后面参数是目标拷贝对象
+    Object.assign(province , city);
+    console.log(province);
+
+    //for in浅拷贝
+    //浅拷贝的问题也比较明显，父对象的prototype属性修改时也会影响拷贝的对象
+    function normalCopy(source , target){
+        var s = source || {};
+        for(var i in target){
+            s[i] = target[i];
+        }
+        return s;
+    }
+    console.log(normalCopy(province , city));
+
+
+
+
+</script>
+</body>
+</html>

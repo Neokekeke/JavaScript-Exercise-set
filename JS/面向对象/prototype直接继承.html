@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>prototype直接继承</title>
+</head>
+<body>
+<script>
+    //prototype直接继承的原理是，构造函数的prototype是一个对象
+    //一些共享的属性可以直接在对象中拓展，这样可以实现共享属性的继承
+    //与前一种方法相比，这样做的优点是效率比较高（不用执行和建立Animal的实例了），比较省内存。
+    //缺点是 Foo.prototype和HaHa.prototype现在指向了同一个对象，
+    //那么任何对Foo.prototype的修改，都会反映到HaHa.prototype。
+    function Foo(){}
+    Foo.prototype.share = function(){
+        console.log("共享属性哦，来吧");
+    };
+
+    function HaHa(){}
+    HaHa.prototype = Foo.prototype; //构造函数之间的prototype赋值，拓展属性得到继承
+
+    var good = new HaHa();
+    good.share();
+
+</script>
+</body>
+</html>

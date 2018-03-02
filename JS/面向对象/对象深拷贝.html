@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>对象深拷贝</title>
+</head>
+<body>
+<script>
+
+    var Animal = {
+        species : '动物',
+        behavior : '吃饭',
+        skill : ['fly','run','speak']
+    };
+
+    var Cat = {
+        name : '可爱的猫猫',
+        action : '跑跑'
+    };
+
+
+    function deepCopy(c , p){
+        var c = c || {};
+
+        for(var i in p){
+            if(typeof p[i] == 'object'){
+                c[i] = (p[i] instanceof Array) ? [] : {};
+                deepCopy(c[i] , p[i]); //浅克隆的递归，遍历每个属性
+            }
+            else{
+                c[i] = p[i];
+            }
+        }
+        return c;
+    }
+    console.log("Cat：",deepCopy(Cat , Animal));
+    Animal.haha = 'haha';
+    console.log("Cat值没有变化：",Cat);
+    console.log("Animal：",Animal);
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>prototype继承</title>
+</head>
+<body>
+<script>
+    function Animals(){
+        this.run = function(){
+            console.log("跑步");
+        }
+    }
+
+    function Cat(species , action){
+        this.species = species;
+        this.action = action;
+    }
+
+    Cat.prototype = new Animals(); //prototype原型继承
+    Cat.prototype.constructor = Cat; //当原型链修改时，第二步就要修改构造函数继承紊乱的问题，因为每个原型都有对应的构造函数
+    var cat = new Cat("可爱的猫猫","跑跑");
+    cat.run();
+    console.log(Animals.prototype);
+</script>
+</body>
+</html>

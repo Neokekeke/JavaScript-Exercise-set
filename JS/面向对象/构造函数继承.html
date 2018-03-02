@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>构造函数继承</title>
+</head>
+<body>
+<script>
+
+    //Animal()构造函数
+    function Animal(){
+        this.species = "帅哥";
+    }
+
+    //Dog()构造函数
+    function Human(name , age){
+        this.name = name;
+        this.age = age;
+        Animal.apply(this , arguments); //构造函数通过apply或call方法，把父对象绑定到子对象上
+    }
+
+    var man = new Human('neo','10');
+    console.log(man.species); //帅哥
+    console.log(man.name);  //neo
+
+
+
+</script>
+</body>
+</html>

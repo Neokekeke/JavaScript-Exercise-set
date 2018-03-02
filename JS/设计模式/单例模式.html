@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>单例模式</title>
+</head>
+<body>
+<script>
+    //单例模式的优点是节约内存空间
+    //内存堆中只存在一个对象实例
+    //闭包实现单例模式
+    //缺点：因为只有一个实例，实例的属性容易得到改变
+    var SingleInstanceTest = (function(){
+        var _instance = null; //一个flag
+        var _default = {
+            name : "Neo",
+            age : 20
+        }; //默认值模板
+        function SingleInstance(ops) {
+            if (this instanceof SingleInstance) {
+                if (_instance == null) {
+                    this._init(ops);
+                    return _instance = this;
+                } else {
+                    _instance._init(ops);
+                    return _instance;
+                }
+            }
+            else {
+                if (_instance == null) {
+                    _instance = new SingleInstance(); //直接调用的话，new一个实例给它
+                    _instance._init(ops);
+                    return _instance;
+                } else {
+                    _instance._init(ops);
+                    return _instance;
+                }
+            }
+        }
+            //通过原型链属性的方式可以拓展更多方法
+            SingleInstance.prototype._init =  function(ops){
+                for(var prop in ops){
+                    if(ops[prop]){
+                        _default[prop] = ops[prop];
+                    }
+                }
+                for(var prop in _default){
+                    this[prop] = _default[prop];
+                }
+            };
+            return SingleInstance;
+    })();
+
+    var i0 = SingleInstanceTest({ name : 'Cherry' }); //不通过new创建
+    var i1 = new SingleInstanceTest();
+    console.log(i1.name);
+    console.log(i0 === i1); //同一个实例，类似对象拷贝继承了
+
+
+
+
+
+</script>
+</body>
+</html>

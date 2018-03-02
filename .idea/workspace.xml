@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab751bdf-81ea-408b-8ce4-c3786fad99fb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/display和visibility/display和visibility.html" afterPath="$PROJECT_DIR$/CSS/display和visibility/display和visibility.html" />
-    </list>
+    <list default="true" id="ab751bdf-81ea-408b-8ce4-c3786fad99fb" name="Default" comment="" />
     <ignored path="JavaScript-Exercise-set.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/JS/面向对象/对象深拷贝.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.4486983" vertical-offset="817" max-vertical-offset="1560">
-              <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+              <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -361,7 +359,7 @@
     <entry file="file://$PROJECT_DIR$/JS/面向对象/对象深拷贝.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4486983" vertical-offset="817" max-vertical-offset="1560">
-          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
           <folding />
         </state>
       </provider>

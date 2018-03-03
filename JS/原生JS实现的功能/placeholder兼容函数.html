@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>placeholder兼容函数</title>
+</head>
+<body>
+<input id="txt" type="text" value="请输入内容"/>
+<script>
+    //写一个placeholder的兼容函数，value为“请输入内容”。当获取焦点时清空，失去焦点且为空时恢复。
+    var ele = document.getElementById('txt');
+    ele.onfocus = function(){
+        if(ele.value == "请输入内容"){
+            this.value = '';
+        }
+    };
+
+    ele.onblur = function(){
+      if(ele.value == ''){
+          this.value = "请输入内容";
+      }
+    }
+
+
+</script>
+</body>
+</html>

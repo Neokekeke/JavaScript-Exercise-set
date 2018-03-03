@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a id="a" href="https://www.baidu.com">haha</a>
+<script>
+    //通用的事件绑定函数
+    //addEventListener 是高级浏览器的方法
+    //attachEvent 是以前IE浏览器的方法
+    function commonBindFn(element , eventName , fn){
+        if(element.addEventListener){
+            element.addEventListener(eventName , fn , false);
+        }
+        else if(element.attachEvent){
+            element.attachEvent('on'+eventName , function(){
+                fn.apply(element); //调用call方法，在IE下将this从指向window改为指向当前对象
+            });
+        }
+        else {
+            element['on' + eventName] = fn;
+        }
+    }
+
+    //removeEventListener 是高级浏览器的方法
+    //detachEvent 是以前IE浏览器的方法
+    function commonDebindFn(element , eventName , fn){
+        if(element.removeEventListener){
+            element.removeEventListener(eventName , fn ,false);
+        }
+        else if(element.detachEvent){
+            element.detachEvent('on'+eventName , function(){
+                //相当于执行fn函数
+                fn.apply(element); //调用call方法，在IE下将this从指向window改为指向当前对象
+            })
+        }
+        else {
+            element['on' + eventName] = null;
+        }
+    }
+
+    var a = document.getElementById('a');
+    commonBindFn(a , 'click' , function(e){
+        e.preventDefault(); //阻止默认事件冒泡
+        alert(a.innerHTML);
+    });
+    commonDebindFn(a , 'click' , function(e){
+        alert('事件解绑了');
+    });
+
+</script>
+</body>
+</html>

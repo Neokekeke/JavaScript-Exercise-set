@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+    <script src="../../JQuery文件/jquery-3.3.1.slim.min.js"></script>
+</head>
+<body>
+
+<script>
+//    http状态码：
+//    200 OK 服务器成功处理了请求（这个是我们见到最多的）
+//    301/302 Moved Permanently（重定向）请求的URL已移走。Response中应该包含一个Location URL, 说明资源现在所处的位置
+//    304 Not Modified（未修改）客户的缓存资源是最新的， 要客户端使用缓存
+//    404 Not Found 未找到资源
+//    500 服务器错误
+//    501 Internal Server Error服务器遇到一个错误，使其无法对请求提供服务
+
+$(function(){
+
+    //原生ajax
+    var xhr;
+    function asyncAjax(){
+        if(window.XMLHttpRequest){
+            xhr = new XMLHttpRequest(); //创建一个ajax对象
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    console.log(xhr.responseText);
+                }
+            }
+        }else {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    console.log(xhr.responseText);
+                }
+            }
+        }
+        xhr.open('POST','url',true);    //建立连接，参数一：发送方式，二：请求地址，三：是否异步，true为异步
+        xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');    //可有可无
+        xhr.send(data);        //发送
+    }
+
+    //jq ajax
+    $.ajax({
+        url : 'url',
+        method : 'POST',
+        data : {
+            name : 'Neo',
+            age : 20
+        },
+        async : true, //或false,是否异步
+        dataType : 'json',  //返回的数据格式：json/xml/html/script/jsonp/text
+        beforeSend : function(xhr){
+            console.log(xhr);
+            console.log("发送前");
+        },
+        success : function(res){
+            console.log("成功获取到数据：", res);
+        },
+        error : function(err){
+            console.log("获取数据失败：", err);
+        },
+        complete : function(){
+            console.log("ajax完成");
+        }
+    });
+});
+
+
+</script>
+
+
+</body>
+</html>

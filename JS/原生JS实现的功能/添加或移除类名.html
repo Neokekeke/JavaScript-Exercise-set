@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加或移除类名</title>
+</head>
+<body>
+<div id="div" class="a"></div>
+<script>
+    //添加或移除类名首先判断该节点是否有这个类名
+    //arr是数组，元素类名转化后的数组，c是类名
+    function classNameIndexOf(arr , c){
+        for(var i = 0; i < arr.length; i++)
+        {
+            if(arr[i] == c){
+                return i; //下标，移除类名的时候可以用到
+            }
+        }
+        return -1;
+    }
+
+    //给元素添加类名
+    function addClassName(ele , className){
+        if(ele.className == '')
+        {
+            ele.className = className;
+        }
+        else {
+                var addClassNameArr = ele.className.split(' '); //数组
+                if(classNameIndexOf(addClassNameArr , className) == -1){
+                    ele.className += ' ' + className;
+                    console.log("添加后：",ele.className);
+                }
+        }
+    }
+
+    //给元素移除类名
+    function removeClassName(ele , className){
+        if(ele.className == ''){
+            return;
+        }
+        else {
+            var removeClassName = ele.className.split(' ');
+            var i = classNameIndexOf(removeClassName , className);
+            if(i != -1){
+                removeClassName.splice(i , 1); //根据下标移除类名
+                ele.className = removeClassName.join();
+                console.log("移除后：",ele.className);
+            }
+        }
+    }
+
+    var div = document.getElementById('div');
+    var newClassName = 'newClassName';
+    addClassName(div , newClassName);
+    removeClassName(div , newClassName);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json</title>
+</head>
+<body>
+
+<script>
+
+//    JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。
+//    它是基于JavaScript的一个子集。数据格式简单, 易于读写, 占用带宽小
+//    如：{"age":"12", "name":"back"} ，键值对必须要用双引号
+//    json的几种方法
+//    JSON.stringify()
+//    JSON.parse()
+
+      var obj = {
+          "name" : 'neo',
+          "age" : 20
+      };
+
+      //JSON对象转换为JSON字符串：
+      var jsonStr = JSON.stringify(obj);
+
+      //JSON字符串转换为JSON对象：
+      var jsonObj = JSON.parse(jsonStr);
+
+      console.log("json字符串：", jsonStr);
+      console.log("json对象：", jsonObj);
+
+</script>
+
+</body>
+</html>

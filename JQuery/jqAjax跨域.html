@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jq ajax</title>
+    <script src="jquery-3.3.1.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div id="mydiv">
+    <button id="btn">点击</button>
+</div>
+
+<!--jq跨域-->
+<script>
+    $(function(){
+
+        $.ajax({
+            url : "http://suggest.taobao.com/sug",
+            type : 'GET',
+            contentType :  "application/x-www-form-urlencoded",
+            data : {
+                code : 'utf-8',
+                q : '电脑'
+            },
+            dataType : "jsonp", // 返回的数据类型，设置为JSONP方式
+            jsonp : "callback", //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
+            jsonpCallBack : 'cb', //设置回调函数名
+            success : function(res){
+                console.log(res.result);
+            },
+            error : function(err){
+                console.log(err);
+            }
+        });
+    });
+</script>
+
+<!--js跨域-->
+<script type="text/javascript">
+    function handleResponse(response){
+        console.log(response);
+    }
+</script>
+<script type="text/javascript">
+    window.onload = function() {
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick = function() {
+            var script = document.createElement("script");
+            //服务器回调函数的名字是handleResponse中返回handleResponse(json数据)，然后先前已经定义handleResponse
+            //就相当于直接调用了方法，从而获取到json数据
+            script.src = "https://api.douban.com/v2/book/search?q=javascript&count=1&callback=handleResponse";
+            document.body.insertBefore(script, document.body.firstChild);
+        };
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+
+    /**
+     属性
+
+     .attr()
+     .html()
+     .removeAttr()
+     .val()
+     */
+
+    //attr()
+    var d1 = $("#d1");
+    var a = document.createElement("A");
+    a.setAttribute("href" ,"https://www.baidu.com");
+    a.setAttribute("target" , "_blank");
+    a.innerHTML = "百度";
+    console.log(d1.attr("id"));
+    d1.append(a);
+    d1.attr({
+        "class" : 'd1class'
+    });
+
+    d1.removeAttr("class");
+
+    //html是html内容，text是文本内容，val是输入框的内容
+    console.log(d1.html());
+
+
+</script>
+
+
+</body>
+</html>

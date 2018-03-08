@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.3.1.js"></script>
+</head>
+<body>
+
+<script>
+    /**
+     CSS
+
+     .addClass()
+     .hasClass()
+     .removeClass()
+     .css()
+     .height()
+     .position()
+     .width()
+     */
+
+    $("#btn1").addClass("abc");
+    console.log($("#btn1").hasClass("abc"));
+    $("#btn1").removeClass("abc");
+    $("btn1").css({
+        "border" : "3px solid red",
+        "font-size" : "30px"
+    });
+    console.log($("#btn1").width(100),$("#btn1").height(50));
+    console.log($("#btn1").position());
+
+
+
+
+</script>
+
+</body>
+</html>

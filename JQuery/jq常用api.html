@@ -21,6 +21,10 @@
 <div id="d2">哈哈</div>
 <div id="d3">哈哈哈</div>
 
+<button id="d5">toggle按钮</button>
+
+<button id="button">bbb</button>
+
 <script>
 
 $(function(){
@@ -149,16 +153,26 @@ $(function(){
      .show()
      .slideDown()
      .slideUp()
-     .toggle()
+     .slideToggle()
      */
 
     //淡入淡出隐藏显示，下滑上滑切换toggle
     $("#d2").hide();
     btn1.click(function(){
         $("#d2").fadeIn().delay(2000).fadeOut();
-        $("#d3").slideDown().delay(2000).slideUp();
+    });
+    $("#d3").click(function(){
+        $("#d3").slideToggle();
     });
 
+    //没次点击执行一次回调函数
+//    $("#button").toggle(function(){
+//                $("body").css("background-color","green");},
+//            function(){
+//                $("body").css("background-color","red");},
+//            function(){
+//                $("body").css("background-color","yellow");}
+//    );
 
 
     /**
@@ -177,6 +191,9 @@ $(function(){
      .blur()
      .focus()
      */
+
+
+
 
     /*
      操作：

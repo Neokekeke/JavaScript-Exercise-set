@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.3.1.js"></script>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+
+<p>点击这个段落修改它的背景颜色。</p>
+<p>点击一下按钮再点击这个段落( click 事件被移除 )。</p>
+
+<button>移除 click 事件句柄</button>
+
+<script>
+    /**
+     事件：
+     .on()
+     .off()
+     .delegate()
+     .one()
+     .submit()
+     .trigger()
+     .bind()
+     .unbind()
+     event.preventDefault()
+     event.stopPropagation()
+     event.target
+     .click()
+     .change()
+     .blur()
+     .focus()
+     */
+
+    $("ul li").on("click" , function(){
+       console.log($(this).html());
+    });
+
+//    $("ul").delegate("li","click",function(){
+//        console.log($(this).html());
+//    })
+
+    //回调函数可选，但是移除后，回调函数不可用
+    $("button").on("click" , function(){
+        $("ul li").off("click");
+    });
+
+    $("p").on("click",function(){
+        $(this).css("background-color","pink");
+    });
+    $("button").click(function(){
+        $("p").off("click");
+    });
+
+
+
+</script>
+
+
+</body>
+</html>

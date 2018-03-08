@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="d1"></div>
+<form>
+    <select>
+        <option>aaa</option>
+        <option>bbb</option>
+        <option>ccc</option>
+    </select>
+    <input type="text" placeholder="文本框" id="text" name="text" value="text"/>
+    <input type="email" placeholder="邮箱" id="mail" name="mail" value="mail"/>
+</form>
+<button id="btn1">序列化</button>
+<script>
+    /**
+     *Ajax:
+
+     .get()
+     .getJSON()
+     .post()
+     .load()
+     .serialize()
+     */
+
+    var data = {
+        code : 'utf-8',
+        q : '电脑',
+        callback : 'cb'
+    };
+    //url , data , callback , dataType(xml, html, script, json, text, _default);
+    $.get("http://suggest.taobao.com/sug?code=utf-8&q=电脑&callback=?" , function(res){
+        console.log(res);
+    },"json");
+
+    //url(这里callback=？的时候jq会自动补上回调函数的名字) , data , callback
+    $.getJSON("http://suggest.taobao.com/sug?code=utf-8&q=电脑&callback=?",function(res){
+        console.log(res);
+    });
+
+    //url , data , callback , dataType(xml, html, script, json, text, _default);
+    //$.post("http://suggest.taobao.com/sug",data,function(res){
+    //console.log(res);
+    //},"json");
+
+    //方法通过 AJAX 请求从服务器加载数据，并把返回的数据放置到指定的元素中
+    //如果该字符串中包含一个或多个空格，紧接第一个空格的字符串则是决定所加载内容的 jQuery 选择器。
+    //如果执行该方法，则会取回 ajax/test.html 的内容，不过然后，jQuery 会解析被返回的文档，
+    //来查找带有容器 ID 的元素。该元素，连同其内容，会被插入带有结果 ID 的元素中，
+    //所取回文档的其余部分会被丢弃。
+    //$("#result").load("ajax/test.html #container");
+
+    //serialize()序列化表格中的内容为字符串
+    $("#btn1").on("click",function(){
+        var res = $("form").serialize();
+        console.log(res);
+        $("#d1").html(res);
+    });
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

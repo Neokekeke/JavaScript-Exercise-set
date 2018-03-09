@@ -55,4 +55,4 @@
     ps      ps  显示当前所有进程
 
 15.终止进程命令
-    kill
+    kill    先查看进程ps -ef | grep vim 再kill (进程号)

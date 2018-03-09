@@ -6,6 +6,7 @@
     <script src="jquery-3.3.1.js"></script>
 </head>
 <body>
+<p id="a">vvv</p>
 
 <script>
     /**
@@ -27,7 +28,12 @@
      .siblings()
      */
 
-
+    $.fn.extend({
+        haha : function(){
+            console.log("haha");
+        }
+    });
+    $("#a").haha();
 
 
 </script>

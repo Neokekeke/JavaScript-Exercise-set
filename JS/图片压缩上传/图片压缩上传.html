@@ -7,10 +7,12 @@
 <body>
 
 <input id="file" type="file">
+<img id="img">
 
 <script>
     //DOM对象
     var eleFile = document.getElementById("file");
+    var image = document.getElementById("img");
 
     //压缩图片需要的元素和对象
     var reader = new FileReader();
@@ -34,10 +36,53 @@
         var maxWidth = 500;
         var maxHeight = 500;
 
-        //
+        //目标的尺寸
+        var targetWidth = originWidth;
+        var targetHeight = originHeight;
 
+        //图片尺寸超出500*500的限制
+        if(originWidth > maxWidth || originHeight > maxHeight) {
+            if (originWidth / originHeight > maxWidth / maxHeight) {
+                //更改图片宽度，按照宽度限定尺寸
+                targetWidth = maxWidth;
+                targetHeight = Math.round(maxWidth * (originHeight / originWidth));
+            } else {
+                targetHeight = maxHeight;
+                targetWidth = Math.round(maxHeight * (originWidth / originHeight));
+            }
 
-    }
+            //canvas对图片进行缩放
+            canvas.width = targetWidth;
+            canvas.height = targetHeight;
+
+            //清除完画布
+            context.clearRect(0, 0, targetWidth , targetHeight);
+
+            //图片开始压缩
+            context.drawImage(img , 0 , 0 , targetWidth , targetHeight);
+
+            canvas.toDataURL();
+        }
+    };
+
+    reader.onload = function(e){
+        img.src = e.target.result;
+        image.src = img.src;
+        console.log(e);
+        console.log(img.src);
+    };
+
+    eleFile.addEventListener('change' , function(e){
+        console.log(e);
+        file = event.target.files[0];
+        //如果选择的是图片
+        if(file.type.indexOf("image") == 0){
+            //转化成base64
+            reader.readAsDataURL(file);
+        }
+    });
+
+    console.log(img);
 
 
 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>图片压缩上传</title>
+</head>
+<body>
+
+<input id="file" type="file">
+
+<script>
+    //DOM对象
+    var eleFile = document.getElementById("file");
+
+    //压缩图片需要的元素和对象
+    var reader = new FileReader();
+    var img = new Image();
+
+    //选择的文件对象
+    var file = null;
+
+    //缩放图片需要的canvas
+    var canvas = document.createElement('canvas');
+    var context = canvas.getContext('2d');
+
+    //base64地址，图片加载完成后
+    img.onload = function(){
+
+        //图片原始尺寸
+        var originWidth = this.width;
+        var originHeight = this.height;
+
+        //上传尺寸最大限制
+        var maxWidth = 500;
+        var maxHeight = 500;
+
+        //
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

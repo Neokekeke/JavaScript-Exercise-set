@@ -5,9 +5,26 @@
     <title>图片压缩上传</title>
 </head>
 <body>
+<style>
+    span{
+        display: block;
+        margin: 2px 0 2px 0;
+    }
+</style>
 
 <input id="file" type="file">
-<img id="img">
+<div id="originImg">
+    <img id="img">
+    <span id="originWidth"></span>
+    <span id="originHeight"></span>
+    <span id="originQuality"></span>
+</div>
+
+<div id="miniImg">
+    <span id="minWidth"></span>
+    <span id="minHeight"></span>
+    <span id="minQuality"></span>
+</div>
 
 <script>
     //DOM对象
@@ -25,6 +42,21 @@
     var canvas = document.createElement('canvas');
     var context = canvas.getContext('2d');
 
+    //原始图片宽度
+    var ow = document.getElementById('originWidth');
+    //原始图片长度
+    var oh = document.getElementById('originHeight');
+    //原始图片的质量
+    var oq = document.getElementById('originQuality');
+
+    //压缩后图片宽度
+    var mw = document.getElementById('minWidth');
+    //压缩后图片长度
+    var mh = document.getElementById('minHeight');
+    //压缩后质量
+    var mq = document.getElementById('minQuality');
+
+
     //base64地址，图片加载完成后
     img.onload = function(){
 
@@ -32,15 +64,19 @@
         var originWidth = this.width;
         var originHeight = this.height;
 
+        ow.innerHTML = `原图片宽度：${originWidth}px`;
+        oh.innerHTML = `原图片长度：${originHeight}px`;
+        oq.innerHTML = `原图片质量：${originQ}kb`;
+
         //上传尺寸最大限制
-        var maxWidth = 500;
-        var maxHeight = 500;
+        var maxWidth = 300;
+        var maxHeight = 300;
 
         //目标的尺寸
         var targetWidth = originWidth;
         var targetHeight = originHeight;
 
-        //图片尺寸超出500*500的限制
+        //图片尺寸超出300*300的限制
         if(originWidth > maxWidth || originHeight > maxHeight) {
             if (originWidth / originHeight > maxWidth / maxHeight) {
                 //更改图片宽度，按照宽度限定尺寸
@@ -55,50 +91,39 @@
             canvas.width = targetWidth;
             canvas.height = targetHeight;
 
+            mw.innerHTML = `压缩图片宽度：${canvas.width}px`;
+            mh.innerHTML = `压缩图片长度：${canvas.height}px`;
+            //mq.innerHTML = `压缩图片质量：${canvas.width}`
+
             //清除完画布
             context.clearRect(0, 0, targetWidth , targetHeight);
 
             //图片开始压缩
             context.drawImage(img , 0 , 0 , targetWidth , targetHeight);
 
-            canvas.toDataURL();
+            canvas.toDataURL("image/jpeg",0.5);
+            var mini = document.getElementById('miniImg');
+            mini.insertBefore(canvas,mini.childNodes[0]);
+            console.log(context.getImageData(0,0,targetWidth,targetHeight));
         }
     };
 
     reader.onload = function(e){
         img.src = e.target.result;
         image.src = img.src;
-        console.log(e);
-        console.log(img.src);
     };
 
+    //原始图片质量
+    var originQ;
     eleFile.addEventListener('change' , function(e){
-        console.log(e);
         file = event.target.files[0];
         //如果选择的是图片
         if(file.type.indexOf("image") == 0){
             //转化成base64
             reader.readAsDataURL(file);
+            originQ = Math.round(file.size / 1024);
         }
     });
-
-    console.log(img);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

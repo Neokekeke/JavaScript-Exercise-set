@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本api</title>
+</head>
+<body>
+
+<div id="d1"></div>
+
+<script>
+    //insertBefore
+    var d1 = document.getElementById("d1");
+    var img = document.createElement('img');
+    var span = document.createElement('span');
+    d1.appendChild(span);
+    img.src = '../../图片/git.jpg';
+    d1.insertBefore(img , d1.childNodes[0]);
+
+    var p = document.createElement("p");
+    p.innerHTML = '哈哈哈';
+    d1.insertBefore(p , d1.childNodes[1]);
+
+</script>
+</body>
+</html>

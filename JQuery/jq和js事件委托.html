@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq和js的事件委托</title>
+    <script type="text/javascript" src="jquery-3.3.1.js"></script>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+
+<script>
+    $(document).ready(function(){
+
+        $("ul").on("click" , "li" , function(){
+           alert($(this).html());
+        });
+
+        $("ul").delegate("li" , "click", function(){
+           alert($(this).html());
+        });
+
+    });
+    var str = "aaa";
+   function a(){
+       console.log(str);
+   }
+   a();
+
+
+</script>
+</body>
+</html>

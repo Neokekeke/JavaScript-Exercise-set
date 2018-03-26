@@ -46,3 +46,18 @@ var promise = new Promise((resolve , reject)=>{
     }).then(value => {
         console.log("第二个then",value);
     });
+
+// Promise.all(iterable), 参数是一个可迭代的参数（一个可迭代对象，如 Array 或 String），
+// 参数内所有的 promise 都“完成（resolved）”或参数中不包含 promise 时回调完成（resolve）；
+// 如果参数中  promise 有一个失败（rejected），此实例回调失败（rejecte），
+// 失败原因的是第一个失败 promise 的结果。
+// 如果传入的可迭代对象是空的，就是同步，如果 Promise.all 失败，也是一样同步：
+// 此方法在集合多个 promise 的返回结果时很有用。
+
+// 完成（Fulfillment）：
+// 如果传入的可迭代对象为空，Promise.all 会同步地返回一个已完成（resolved）状态的promise。
+// 如果所有传入的 promise 都变为完成状态，或者传入的可迭代对象内没有 promise，Promise.all 返回的 promise 异步地变为完成。
+// 在任何情况下，Promise.all 返回的 promise 的完成状态的结果都是一个数组，它包含所有的传入迭代参数对象的值（也包括非 promise 值）。
+//
+// 失败/拒绝（Rejection）：
+// 如果传入的 promise 中有一个失败（rejected），Promise.all 异步地将失败的那个结果给失败状态的回调函数，而不管其它 promise 是否完成。

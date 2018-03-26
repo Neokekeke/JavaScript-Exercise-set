@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq和js的事件委托</title>
+    <script type="text/javascript" src="jquery-3.3.1.js"></script>
+</head>
+<body>
+<p>
+    那什么叫事件委托呢？它还有一个名字叫事件代理，JavaScript高级程序设计上讲：事件委托就是利用事件冒泡，只指定一个事件处理程序，
+
+    就可以管理某一类型的所有事件。那这是什么意思呢？网上的各位大牛们讲事件委托基本上都用了同一个例子，就是取快递来解释这个现象，
+
+    我仔细揣摩了一下，这个例子还真是恰当，我就不去想别的例子来解释了，借花献佛，我摘过来，大家认真领会一下事件委托到底是一个什么原理：
+
+    有三个同事预计会在周一收到快递。为签收快递，有两种办法：一是三个人在公司门口等快递；二是委托给前台MM代为签收。
+
+    现实当中，我们大都采用委托的方案（公司也不会容忍那么多员工站在门口就为了等快递）。
+
+    前台MM收到快递后，她会判断收件人是谁，然后按照收件人的要求签收，甚至代为付款。这种方案还有一个优势，
+
+    那就是即使公司里来了新员工（不管多少），前台MM也会在收到寄给新员工的快递后核实并代为签收。
+
+    这里其实还有2层意思的：
+
+    第一，现在委托前台的同事是可以代为签收的，即程序中的现有的dom节点是有事件的；
+
+    第二，新员工也是可以被前台MM代为签收的，即程序中新添加的dom节点也是有事件的。
+</p>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<script>
+    $(document).ready(function(){
+
+//        $("ul").on("click" , "li" , function(){
+//           alert($(this).html());
+//        });
+//
+//        $("ul").delegate("li" , "click", function(){
+//           alert($(this).html());
+//        });
+
+
+        var li = document.getElementsByTagName('li');
+        for(var i = 0; i < li.length; i++){
+            (function(i){ // 闭包
+                li[i].onclick = function(){
+                    console.log(li[i].innerHTML);
+                }
+            })(i)
+        }
+
+    });
+
+
+
+</script>
+</body>
+</html>

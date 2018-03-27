@@ -160,3 +160,13 @@ var arr2 = aar.filter(function(x, index) {
     return index % 3 === 0 && x >= 8;
 });
 console.log(arr2);  //[1, 4, 7, 8, 9, 10]
+
+//13 reduce()
+var resArr = [1,23,33];
+function getSum(prev , next){
+    console.log("prev",prev);
+    console.log("next",next);
+    return prev + next;
+}
+var res = resArr.reduce(getSum,0);
+console.log(res);

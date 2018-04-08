@@ -1,0 +1,9 @@
+最近在使用axios，但是axios没用jsonp这种跨域方式，但是又想在vue项目中使用axios，
+提供几种跨域方式吧，server端设置http header Cors(跨域资源共享)
+
+有个代理网站很有趣：https://bird.ioliu.cn
+
+使用方法是：https://bird.ioliu.cn/v1/?url=(需要跨域的地址)
+
+如：https://bird.ioliu.cn/v1/?url=https://api.douban.com/v2/book/1220562
+

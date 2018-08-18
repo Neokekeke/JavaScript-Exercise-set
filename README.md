@@ -6,7 +6,7 @@ CSS练习集
 
 前端性能优化：
 
-# 1、http缓存（304），请求header包括response header(etag ，last-modified) 和 request header(If-Modified-Since)
+### 1、http缓存（304），请求header包括response header(etag ，last-modified) 和 request header(If-Modified-Since)
 其中目的是利用了浏览器的缓存机制，从第一次浏览器请求服务器资源，第一次拿到资源后会对资源在一定时间内进行缓存，(强制缓存和对比缓存)
 在一段时间内服务器资源未发生改变，下一次再请求服务器资源时，
 
@@ -14,7 +14,7 @@ CSS练习集
 
 （2）对比缓存是通过etag ，last-modified字段去服务器对比If-Modified-Since时间字段，如果服务器资源发生变化，则强制刷新页面重新拉取服务器资源，再缓存到本地。
 
-# 2、http2.0(网页渲染速度的优化)和https
+### 2、http2.0(网页渲染速度的优化)和https
 
 （1）多路复用，即单个连接上同时进行多个业务单元数据的传输。
 
@@ -29,11 +29,11 @@ CSS练习集
 （5）服务端推送 
     服务端推送能把客户端所需要的资源伴随着index.html一起发送到客户端，省去了客户端重复请求的步骤。正因为没有发起请求，建立连接等操作，所以静态资源通过服务端推送的方式可以极大地提升速度。
 
-# 3、jquery的作用，相比js
+### 3、jquery的作用，相比js
 
 jquery能兼容低版本的ie浏览器这也是它的一个特点，链式操作等
 
-# 4、模块化，es6怎么实现的模块化，require.js是在es6之前怎么实现的模块化，common.js为什么不能运行在前端
+### 4、模块化，es6怎么实现的模块化，require.js是在es6之前怎么实现的模块化，common.js为什么不能运行在前端
 
 es6 （import，export）
 
@@ -41,6 +41,6 @@ require.js（require() , define()）
 
 common.js （浏览器没有node提供的环境不能执行common.js，通过闭包立即执行,提供module，export，module.export这几个变量）
 
-# 5、es6的一些新特性，比如let的作用，TDZ是什么（也就是变量在一个块内未声明就不能直接赋值使用，暂时性死区）
+### 5、es6的一些新特性，比如let的作用，TDZ是什么（也就是变量在一个块内未声明就不能直接赋值使用，暂时性死区）
 
-# 6、webpack的理解
+### 6、webpack的理解

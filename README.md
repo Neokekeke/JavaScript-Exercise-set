@@ -5,6 +5,7 @@ CSS练习集
 个人的前端知识练习记录，总结。
 
 前端性能优化：
+
 1、http缓存（304），请求header包括response header(etag ，last-modified) 和 request header(If-Modified-Since)
 其中目的是利用了浏览器的缓存机制，从第一次浏览器请求服务器资源，第一次拿到资源后会对资源在一定时间内进行缓存，(强制缓存和对比缓存)
 在一段时间内服务器资源未发生改变，下一次再请求服务器资源时，

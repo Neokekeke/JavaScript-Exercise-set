@@ -43,7 +43,7 @@
                 element.attachEvent('on' + type, hander);
             }else{
                 element['on' + type] = null;
-            };
+            }
         },
         //阻止事件
         stopPropagation : function  (event) {
@@ -51,13 +51,13 @@
                 event.stopPropagation();    //W3C标准
             }else{
                 event.canceBubble = true;   //IE
-            };
+            }
         },
         //取消默认事件
         preventDefault : function (event) {
             if (event.preventDefault) {
                 event.preventDefault();
-            };
+            }
         },
         //获取事件目标
         getTarget : function (event) {

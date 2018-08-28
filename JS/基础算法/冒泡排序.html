@@ -17,12 +17,12 @@
            return arr;
        }
        else{
-           var index = arr.length-1; //从第二位开始比较，对比数组总长度-1
+           var index = arr.length-1;
            while(index > 0){
                var pos = 0; //初始时,最后位置保持不变　
                for(var i = 0; i < index; i++){
                    if(arr[i] > arr[i+1]){
-                       pos= i; //记录交换的位置，每次都记录最大值的下标
+                       pos= i; //记录交换的位置，每次都记录最大值的下标，标志位来的，无意义，只是把pos的
                        var tem = arr[i];
                        arr[i] = arr[i+1];
                        arr[i+1] = tem;

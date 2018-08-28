@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>双向绑定例子</title>
+</head>
+<body>
+    
+    <div>
+        输入框1：<input id="input1" type="number" />
+        输入框2：<input id="input2" type="number" />
+        <div>
+            结果：<span id="txt"></span>
+        </div>
+    </div>
+
+
+    <script>
+        let input1 = document.getElementById('input1');
+        let input2 = document.getElementById('input2');
+        let txt = document.getElementById('txt');
+        let obj = {}; // 通过一个对象去传值
+
+        // 修改对象的属性
+        Object.defineProperties(obj , {
+            val1 : {
+                configurable : true,
+                get : () => {
+                    input1.value = 0;
+                    input2.value = 0;
+                    txt.innerHTML = 0;
+                    return 0;
+                },
+                set : value => {
+                    input2.value = value ? value : 0;
+                    txt.innerHTML = value ? value : 0;
+                }
+            },
+            val2 : {
+                get : () => {
+                    input1.value = 0;
+                    input2.value = 0;
+                    txt.innerHTML = 0;
+                    return 0;
+                },
+                set : value => {
+                    input1.value = value ? value : 0;
+                    txt.innerHTML = value ? value : 0;
+                }
+            }
+        });
+    
+        input1.addEventListener('keyup' , () => {
+            obj.val1 = input1.value;
+        });
+
+        input2.addEventListener('keyup' , () => {
+            obj.val2 = input2.value;
+        });
+    </script>
+</body>
+</html>

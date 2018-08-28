@@ -55,7 +55,7 @@ console.log(str.substring(1,7));
 
 //7 trim() 该方法是ES5新增方法，用来删除字符串前置及后缀的所有空格。
 var str6 = "   hello world   ";
-var strCopy = str.trim();
+var strCopy = str6.trim();
 console.log(str6); //"   hello world   "
 console.log(strCopy); //"hello world"
 
@@ -88,3 +88,12 @@ mat = gg.replace(/oo/g , function(match , index , orginalText){
 var hg = "boo, foo, book, good, look";
 var hgg = hg.split('' , 2);
 console.log(hgg);
+
+//11 splice()
+//   截取数组中的某一子串数组
+//   第一个参数是，从哪开始截取，
+//   第二个参数是截取或替换几个
+//   第三个参数可选，替换的参数
+var arr = [1,3,2,6,5];
+console.log(arr.splice(1,2,"a")); //[ 3, 2 ]
+console.log(arr); //[ 1, 'a', 6, 5 ]

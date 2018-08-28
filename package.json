@@ -1,0 +1,24 @@
+{
+  "name": "javascript-exercise-set",
+  "version": "1.0.0",
+  "description": "JavaScript练习集\r CSS练习集",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neokekeke/JavaScript-Exercise-set.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Neokekeke/JavaScript-Exercise-set/issues"
+  },
+  "homepage": "https://github.com/Neokekeke/JavaScript-Exercise-set#readme",
+  "dependencies": {
+    "live-server": "^1.2.0",
+    "node": "^10.9.0",
+    "nvm": "0.0.4"
+  }
+}
